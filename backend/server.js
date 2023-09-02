@@ -1,7 +1,12 @@
-const express = require("express");
+const express = require("express"); // raccourci
+const connectDB = require("./config/db");
+const dotenv = require("dotenv").config();
 const port = 5000;
 
-const app = express();
+//connexion à la DB
+connectDB();
+
+const app = express(); // 2eme raccourci
 
 // Middleware traitant les données req
 app.use(express.json());
